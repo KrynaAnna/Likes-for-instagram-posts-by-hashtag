@@ -1,11 +1,12 @@
 from auth import login, password
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time, random
 
 a, b, c = 'sweets', 'love', 'ontario'
-#LOG IN
+# LOG IN
+
+
 def hashtag(login, password):
     browser = webdriver.Chrome('D:\chromedriver.exe')
     browser.implicitly_wait(8)
@@ -26,7 +27,6 @@ def hashtag(login, password):
     _password.send_keys(password)
 
     time.sleep(random.randrange(10))
-    #_password.send_keys(Keys.ENTER)
 
     _b_button = browser.find_element_by_css_selector('button[type ="submit"]')
     _b_button.click()
@@ -37,7 +37,9 @@ def hashtag(login, password):
     _d_button = browser.find_element_by_css_selector('button[class="aOOlW   HoLwm "]')
     _d_button.click()
     time.sleep(random.randrange(4,8))
-#HASHTAGS
+    
+# HASHTAGS
+    
     hashtags=[a, b, c]
     for h in hashtags:
 
@@ -54,7 +56,7 @@ def hashtag(login, password):
             if "/p/" in href:
               links.append(href)
 
-        for link in links[0:3]: #100
+        for link in links[0:3]:
             browser.get(link)
             time.sleep(random.randrange(5,10))
 
