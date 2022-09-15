@@ -1,4 +1,4 @@
-from auth import login, password
+from authentication import login, password
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time, random
